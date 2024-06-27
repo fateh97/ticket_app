@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ticket_app/base/res/media.dart';
+import 'package:ticket_app/base/res/styles/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,32 +22,29 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start, //horizontal
                       children: [
-                        Text("Good Morning",
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.w500)),
-                        SizedBox(
+                        Text("Good Morning", style: AppStyles.headLineStyle3),
+                        const SizedBox(
                           height: 5,
                         ),
-                        Text("Book Tickets",
-                            style: TextStyle(
-                                fontSize: 26,
-                                fontWeight: FontWeight.w500,
-                                color: Color(0xFF3b3b3b)))
+                        Text("Book Tickets", style: AppStyles.headLineStyle1)
                       ],
                     ),
                     Container(
-                      color: Colors.red,
-                      width: 100,
-                      height: 70,
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage(AppMedia.logo))),
                     )
                   ],
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("Search icon"), Text("Empty space")],
+                  children: [Text("Search icon")],
                 )
               ],
             ),
